@@ -8,10 +8,10 @@ import shakeImg from "@/assets/shake.jpg";
 import friesImg from "@/assets/fries.jpg";
 import mocktailImg from "@/assets/mocktail.jpg";
 import pastaImg from "@/assets/pasta.jpg";
-import interior1 from "@/assets/interior1.png.asset.json";
-import interior2 from "@/assets/interior2.png.asset.json";
-import interior3 from "@/assets/interior3.png.asset.json";
-import sandwichAsset from "@/assets/sandwich.png.asset.json";
+import interior1 from "@/assets/interior1.png";
+import interior2 from "@/assets/interior2.png";
+import interior3 from "@/assets/interior3.png";
+import sandwichImg from "@/assets/sandwich.png";
 import {
   Coffee, ShoppingBag, Phone, MapPin, Clock, Instagram,
   Star, Plus, Minus, X, MessageCircle, Navigation as NavIcon, Search, Heart, Leaf
@@ -39,9 +39,9 @@ const MENU: Item[] = [
   { id: "cgt", cat: "Coffee", name: "Classic Green Tea", desc: "Light, floral, calming.", price: 25, img: heroImg, veg: true },
   { id: "frc", cat: "Coffee", name: "Frost Coffee", desc: "Iced, smooth, refreshing.", price: 30, img: coldCoffee, veg: true },
 
-  { id: "vgs", cat: "Sandwich", name: "Veg Cheese Grill", desc: "Garden greens, melted cheese, golden grill.", price: 90, img: sandwichAsset.url, veg: true, tag: "Chef's Pick" },
-  { id: "ccs", cat: "Sandwich", name: "Corn Cheese Sandwich", desc: "Sweet corn, mozzarella, herbs.", price: 90, img: sandwichAsset.url, veg: true },
-  { id: "clb", cat: "Sandwich", name: "Club Sandwich", desc: "Triple-decker, crisp veggies.", price: 70, img: sandwichAsset.url, veg: true },
+  { id: "vgs", cat: "Sandwich", name: "Veg Cheese Grill", desc: "Garden greens, melted cheese, golden grill.", price: 90, img: sandwichImg, veg: true, tag: "Chef's Pick" },
+  { id: "ccs", cat: "Sandwich", name: "Corn Cheese Sandwich", desc: "Sweet corn, mozzarella, herbs.", price: 90, img: sandwichImg, veg: true },
+  { id: "clb", cat: "Sandwich", name: "Club Sandwich", desc: "Triple-decker, crisp veggies.", price: 70, img: sandwichImg, veg: true },
 
   { id: "pz1", cat: "Pizza", name: "Margherita", desc: "San marzano, basil, fresh mozzarella.", price: 180, img: pizzaImg, veg: true, tag: "Popular" },
   { id: "bg1", cat: "Burger", name: "Cheese Smash Burger", desc: "Double patty, american cheese, brioche.", price: 160, img: burgerImg, veg: false },
@@ -278,7 +278,7 @@ function Home() {
           <p className="text-xs uppercase tracking-[0.25em] text-primary">The Space</p>
           <h2 className="mt-3 max-w-2xl font-display text-4xl font-light sm:text-5xl">A corner of Wanwadi that feels like <em className="gold-text not-italic">somewhere else</em>.</h2>
           <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-            {[interior1.url, interior2.url, interior3.url, sandwichAsset.url].map((src, i) => (
+            {[interior1, interior2, interior3, sandwichImg].map((src, i) => (
               <div key={i} className={`group relative overflow-hidden rounded-2xl ${i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-[4/5]"}`}>
                 <img src={src} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" />
               </div>
@@ -291,7 +291,7 @@ function Home() {
       <section id="about" className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
-            <img src={interior2.url} alt="BLN Café interior" loading="lazy" className="h-full w-full object-cover" />
+            <img src={interior2} alt="BLN Café interior" loading="lazy" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-tr from-background/50 to-transparent" />
           </div>
           <div>
